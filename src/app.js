@@ -7,6 +7,8 @@ const hbs = require('hbs')
 
 
 const app = express()
+const port = process.env.PORT || 3000
+
 //Set up static directory to server
 app.use(express.static(path.join(__dirname,'../public'))) //publicDirectoryPath
 // Define paths for handlebar views
@@ -79,6 +81,6 @@ app.get('*', (req,res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log("server is up on port 3000")
+app.listen(port, () => {
+    console.log("server is up on port " + port)
 })
